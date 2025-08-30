@@ -1,7 +1,7 @@
 package com.mendonca.hexagonal.adapters.out;
 
 import com.mendonca.hexagonal.adapters.out.client.FindAdressByZipCodeClient;
-import com.mendonca.hexagonal.adapters.out.client.mapper.AddressResponseMapper;
+import com.mendonca.hexagonal.adapters.out.repository.mapper.AddressResponseMapper;
 import com.mendonca.hexagonal.adapters.out.client.response.AddressResponse;
 import com.mendonca.hexagonal.application.core.domain.Address;
 import com.mendonca.hexagonal.application.ports.out.FindAddressByZipCodeOutputPort;

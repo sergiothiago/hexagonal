@@ -1,4 +1,4 @@
-package com.mendonca.hexagonal.adapters.out.client.mapper;
+package com.mendonca.hexagonal.adapters.out.repository.mapper;
 
 import com.mendonca.hexagonal.adapters.out.client.response.AddressResponse;
 import com.mendonca.hexagonal.application.core.domain.Address;

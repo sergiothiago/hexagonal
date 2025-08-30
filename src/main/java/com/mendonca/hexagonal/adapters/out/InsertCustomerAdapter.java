@@ -1,6 +1,6 @@
 package com.mendonca.hexagonal.adapters.out;
 
-import com.mendonca.hexagonal.adapters.out.client.mapper.CustomerEntityMapper;
+import com.mendonca.hexagonal.adapters.out.repository.mapper.CustomerEntityMapper;
 import com.mendonca.hexagonal.adapters.out.repository.CustomerRepository;
 import com.mendonca.hexagonal.adapters.out.repository.entity.CustomerEntity;
 import com.mendonca.hexagonal.application.core.domain.Customer;
