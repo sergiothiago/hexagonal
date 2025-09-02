@@ -2,12 +2,13 @@ package com.mendonca.hexagonal.application.core.usecase;
 
 
 import com.mendonca.hexagonal.application.core.domain.Customer;
+import com.mendonca.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.mendonca.hexagonal.application.ports.out.FindCustomerByIdOutputPort;
 
 /**
  * Use case for finding a customer by their ID.
  */
-public class FindCustomerByIdUseCase {
+public class FindCustomerByIdUseCase implements FindCustomerByIdInputPort {
 
     private final FindCustomerByIdOutputPort findCustomerByIdOutputPort;
 
@@ -22,6 +23,7 @@ public class FindCustomerByIdUseCase {
      * @return The found customer.
      * @throws RuntimeException if the customer is not found.
      */
+    @Override
     public Customer find(String id){
         return findCustomerByIdOutputPort.find(id).orElseThrow(
                 () -> new RuntimeException("Customer not found")
