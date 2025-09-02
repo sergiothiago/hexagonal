@@ -6,12 +6,14 @@ import com.mendonca.hexagonal.adapters.in.controller.response.CustomerResponse;
 import com.mendonca.hexagonal.application.core.domain.Customer;
 import com.mendonca.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.mendonca.hexagonal.application.ports.in.InsertCustomerInputPort;
+import com.mendonca.hexagonal.application.ports.in.UpdateCustomerInputPort;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +31,9 @@ public class CustomerController {
     @Autowired
     private FindCustomerByIdInputPort findCustomerByIdInputPort;
 
+    @Autowired
+    private UpdateCustomerInputPort updateCustomerInputPort;
+
     @PostMapping
     public ResponseEntity<Void> insert(@Valid @RequestBody CustomerRequest customerRequest) {
         Customer customer = customerMapper.toCustomer(customerRequest);
@@ -45,6 +50,15 @@ public class CustomerController {
 
         return ResponseEntity.ok().body(customerResponse);
 
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> update(@PathVariable String id, @Valid @RequestBody CustomerRequest customerRequest ){
+        Customer customer = customerMapper.toCustomer(customerRequest);
+        customer.setId(id);
+
+        updateCustomerInputPort.update(customer, customerRequest.getZipCode());
+        return ResponseEntity.ok().build();
     }
 
 }
