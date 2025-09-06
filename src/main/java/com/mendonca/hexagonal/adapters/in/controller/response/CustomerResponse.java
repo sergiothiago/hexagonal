@@ -11,5 +11,5 @@ public class CustomerResponse {
 
     private String cpf;
 
-    private boolean isValidcpf;
+    private boolean isValidCpf;
 }

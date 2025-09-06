@@ -3,15 +3,15 @@ package com.mendonca.hexagonal.application.core.domain;
 public class Customer {
 
     public Customer() {
-        this.isValidcpf = false;
+        this.isValidCpf = false;
     }
 
-    public Customer(String id, String name, Address address, String cpf, boolean isValidcpf) {
+    public Customer(String id, String name, Address address, String cpf, boolean isValidCpf) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.cpf = cpf;
-        this.isValidcpf = isValidcpf;
+        this.isValidCpf = isValidCpf;
     }
 
     private String id;
@@ -22,7 +22,7 @@ public class Customer {
 
     private String cpf;
 
-    private boolean isValidcpf;
+    private boolean isValidCpf;
 
     public String getId() {
         return id;
@@ -56,11 +56,11 @@ public class Customer {
         this.cpf = cpf;
     }
 
-    public boolean isValidcpf() {
-        return isValidcpf;
+    public boolean isValidCpf() {
+        return isValidCpf;
     }
 
-    public void setValidcpf(boolean validcpf) {
-        isValidcpf = validcpf;
+    public void setValidCpf(boolean isValidCpf) {
+        this.isValidCpf = isValidCpf;
     }
 }

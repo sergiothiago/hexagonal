@@ -1,5 +1,6 @@
 package com.mendonca.hexagonal.adapters.in.controller.mapper;
 
+import com.mendonca.hexagonal.adapters.in.consumer.message.CustomerMessage;
 import com.mendonca.hexagonal.adapters.in.controller.request.CustomerRequest;
 import com.mendonca.hexagonal.adapters.in.controller.response.CustomerResponse;
 import com.mendonca.hexagonal.application.core.domain.Customer;
